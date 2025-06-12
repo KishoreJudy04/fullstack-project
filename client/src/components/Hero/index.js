@@ -36,7 +36,7 @@ const Hero = () => {
         <ContentWrapper>
           <TextContent>
             <MainHeading>
-              Hi, I'm <AccentText>Your Name</AccentText>
+              Hi, I'm <AccentText>KISHORE</AccentText>
             </MainHeading>
             <SubHeading>Full Stack Developer</SubHeading>
             <Description>
@@ -87,8 +87,8 @@ const Hero = () => {
           </TextContent>
           <ImageWrapper>
             <ProfileImage
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&h=800"
-              alt="Your Name - Full Stack Developer"
+              src="https://i.ibb.co/S4RTrB0y/IMG-9602-removebg-preview.png"
+              alt="Kishore - Full Stack Developer"
             />
           </ImageWrapper>
         </ContentWrapper>

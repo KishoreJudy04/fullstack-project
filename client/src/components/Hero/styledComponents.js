@@ -5,7 +5,15 @@ export const HeroSection = styled.section`
   min-height: 90vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(120deg, #3f3d56 0%, #4b4b8f 100%);
+  background: #00b7ff;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 183, 255, 1) 0%,
+    rgba(0, 238, 250, 1) 50%,
+    rgba(0, 128, 255, 1) 100%
+  );
+  background-size: cover;
+  background-position: center;
   color: #fff;
 `;
 
@@ -112,11 +120,9 @@ export const ImageWrapper = styled.div`
 `;
 
 export const ProfileImage = styled.img`
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  border: 4px solid #fff;
+  width: 380px;
+  height: 450px;
   object-fit: cover;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
-  background: #fff;
+  color: #000;
+  transition: transform 0.3s;
 `;

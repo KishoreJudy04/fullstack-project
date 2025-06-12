@@ -28,8 +28,10 @@ export const NavContainer = styled.div`
 `;
 
 export const Logo = styled.div`
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   font-size: 1.25rem;
   color: hsl(215, 25%, 27%);
 `;
@@ -44,6 +46,8 @@ export const DesktopNav = styled.div`
 `;
 
 export const NavLink = styled.button`
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
   font-weight: 500;
   background: none;
   border: none;
