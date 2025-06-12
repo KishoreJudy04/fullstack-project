@@ -15,6 +15,10 @@ app.get('/', (req, res) => {
   res.send('API is working');
 });
 
+app.use("/projects", require("./routes/projects"));
+app.use("/skills", require("./routes/skills"));
+app.use("/contact", require("./routes/contact"));
+
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
