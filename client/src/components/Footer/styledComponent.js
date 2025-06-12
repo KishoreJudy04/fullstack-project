@@ -1,17 +1,8 @@
-import React, { Component } from "react";
-import { FooterSection } from "./styledComponent";
+import styled from "styled-components";
 
-class Footer extends Component {
-  render() {
-    return (
-      <FooterSection>
-        <p>
-          © 2024 Alex Johnson. Built with React.js and Node.js. All rights
-          reserved.
-        </p>
-      </FooterSection>
-    );
-  }
-}
-
-export default Footer;
+export const FooterSection = styled.footer`
+  text-align: center;
+  padding: 2rem;
+  background-color: #2d3e50;
+  color: white;
+`;
