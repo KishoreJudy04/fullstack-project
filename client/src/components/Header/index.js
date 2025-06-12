@@ -61,7 +61,7 @@ export default function Navigation() {
   return (
     <Nav>
       <NavContainer>
-        <Logo>Alex Johnson</Logo>
+        <Logo>Kishore</Logo>
 
         <DesktopNav>
           {navLinks.map((link) => (

@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { SkillsSection, Grid, SkillCard } from "./styledComponent";
+import { Component } from "react";
+import { SkillsSection, Grid, SkillCard } from "./styledComponents";
 
 class Skills extends Component {
   render() {
