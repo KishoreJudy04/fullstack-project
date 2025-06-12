@@ -1,53 +1,58 @@
-import { Component } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import {
   ProjectsSection,
-  Grid,
-  Card,
-  TechTag,
-  TagRow,
-} from "./styledComponent";
+  ProjectsHeading,
+  ProjectsGrid,
+  ProjectCard,
+  ProjectTitle,
+  ProjectDescription,
+  TechStack,
+  TechBadge,
+  ProjectLinks,
+  ProjectLink,
+} from "./styledComponents";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
-class Projects extends Component {
-  render() {
-    return (
-      <ProjectsSection id="projects">
-        <h2>Featured Projects</h2>
-        <Grid>
-          <Card>
-            <img src="/ecommerce.jpg" alt="E-Commerce" />
-            <h3>E-Commerce Platform</h3>
-            <p>Online store built with React, Node.js, and Stripe.</p>
-            <TagRow>
-              <TechTag>React</TechTag>
-              <TechTag>Node.js</TechTag>
-              <TechTag>Stripe</TechTag>
-            </TagRow>
-          </Card>
-          <Card>
-            <img src="/todo.jpg" alt="Task Manager" />
-            <h3>Task Management App</h3>
-            <p>
-              Real-time tool with drag-and-drop, built using Express &
-              PostgreSQL.
-            </p>
-            <TagRow>
-              <TechTag>Express</TechTag>
-              <TechTag>Socket.io</TechTag>
-            </TagRow>
-          </Card>
-          <Card>
-            <img src="/weather.jpg" alt="Weather App" />
-            <h3>Weather Dashboard</h3>
-            <p>Forecasting app with OpenWeather API and charts.</p>
-            <TagRow>
-              <TechTag>Chart.js</TechTag>
-              <TechTag>OpenWeather</TechTag>
-            </TagRow>
-          </Card>
-        </Grid>
-      </ProjectsSection>
-    );
-  }
-}
+const Projects = () => {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/projects")
+      .then((res) => setProjects(res.data));
+  }, []);
+
+  return (
+    <ProjectsSection id="projects">
+      <ProjectsHeading>Projects</ProjectsHeading>
+      <ProjectsGrid>
+        {projects.map((proj, idx) => (
+          <ProjectCard key={idx}>
+            <ProjectTitle>{proj.name}</ProjectTitle>
+            <ProjectDescription>{proj.description}</ProjectDescription>
+            <TechStack>
+              {proj.tech.map((tech) => (
+                <TechBadge key={tech}>{tech}</TechBadge>
+              ))}
+            </TechStack>
+            <ProjectLinks>
+              <ProjectLink
+                href={proj.github}
+                target="_blank"
+                aria-label="GitHub"
+              >
+                <FaGithub /> GitHub
+              </ProjectLink>
+              <ProjectLink href={proj.demo} target="_blank" aria-label="Demo">
+                <FaExternalLinkAlt /> Demo
+              </ProjectLink>
+            </ProjectLinks>
+          </ProjectCard>
+        ))}
+      </ProjectsGrid>
+    </ProjectsSection>
+  );
+};
 
 export default Projects;

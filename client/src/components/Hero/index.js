@@ -1,67 +1,100 @@
-import { Component } from "react";
 import {
   HeroSection,
-  HeroText,
-  Highlight,
-  Subtitle,
-  Buttons,
-  ButtonPrimary,
-  ButtonSecondary,
+  Overlay,
+  Container,
+  ContentWrapper,
+  TextContent,
+  MainHeading,
+  AccentText,
+  SubHeading,
+  Description,
+  ButtonGroup,
+  PrimaryButton,
+  SecondaryButton,
+  SocialLinks,
+  SocialIcon,
+  ImageWrapper,
   ProfileImage,
-  SocialIcons,
-  SocialIconLink,
-} from "./styledComponent";
+} from "./styledComponents";
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 
-class Hero extends Component {
-  render() {
-    return (
-      <HeroSection>
-        <HeroText>
-          <h1>
-            Hi, I'm <Highlight>Alex Johnson</Highlight>
-          </h1>
-          <Subtitle>Full Stack Developer</Subtitle>
-          <p>
-            Passionate about creating beautiful, functional web applications
-            that solve real-world problems and deliver exceptional user
-            experiences.
-          </p>
-          <Buttons>
-            <ButtonPrimary>Get In Touch</ButtonPrimary>
-            <ButtonSecondary>View Work</ButtonSecondary>
-          </Buttons>
-          <SocialIcons>
-            <SocialIconLink
-              href="https://github.com/"
-              target="_blank"
-              aria-label="GitHub"
-            >
-              <FaGithub />
-            </SocialIconLink>
-            <SocialIconLink
-              href="https://linkedin.com/"
-              target="_blank"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin />
-            </SocialIconLink>
-            <SocialIconLink
-              href="https://twitter.com/"
-              target="_blank"
-              aria-label="Twitter"
-            >
-              <FaTwitter />
-            </SocialIconLink>
-            <SocialIconLink href="mailto:alex@example.com" aria-label="Email">
-              <FaEnvelope />
-            </SocialIconLink>
-          </SocialIcons>
-        </HeroText>
-        <ProfileImage src="/profile.jpg" alt="Alex Johnson" />
-      </HeroSection>
-    );
-  }
-}
+const Hero = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 60,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  return (
+    <HeroSection id="home">
+      <Overlay />
+      <Container>
+        <ContentWrapper>
+          <TextContent>
+            <MainHeading>
+              Hi, I'm <AccentText>Your Name</AccentText>
+            </MainHeading>
+            <SubHeading>Full Stack Developer</SubHeading>
+            <Description>
+              Passionate about creating beautiful, functional web applications
+              that solve real-world problems and deliver exceptional user
+              experiences.
+            </Description>
+            <ButtonGroup>
+              <PrimaryButton onClick={() => scrollToSection("contact")}>
+                Get In Touch
+              </PrimaryButton>
+              <SecondaryButton onClick={() => scrollToSection("projects")}>
+                View Work
+              </SecondaryButton>
+            </ButtonGroup>
+            <SocialLinks>
+              <SocialIcon
+                href="https://github.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <FaGithub size={28} />
+              </SocialIcon>
+              <SocialIcon
+                href="https://linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin size={28} />
+              </SocialIcon>
+              <SocialIcon
+                href="https://twitter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+              >
+                <FaTwitter size={28} />
+              </SocialIcon>
+              <SocialIcon
+                href="mailto:your.email@example.com"
+                aria-label="Email"
+              >
+                <FaEnvelope size={28} />
+              </SocialIcon>
+            </SocialLinks>
+          </TextContent>
+          <ImageWrapper>
+            <ProfileImage
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&h=800"
+              alt="Your Name - Full Stack Developer"
+            />
+          </ImageWrapper>
+        </ContentWrapper>
+      </Container>
+    </HeroSection>
+  );
+};
 
 export default Hero;

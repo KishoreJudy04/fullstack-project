@@ -6,7 +6,7 @@ import {
   Input,
   Textarea,
   SubmitButton,
-} from "./styledComponent";
+} from "./styledComponents";
 
 class Contact extends Component {
   render() {
