@@ -28,11 +28,7 @@ const Home = () => {
               Hi, I'm <AccentText>KISHORE</AccentText>
             </MainHeading>
             <SubHeading>Full Stack Developer</SubHeading>
-            <Description>
-              I'm a Full Stack Developer who loves building clean, responsive
-              web applications that solve real-world problems and deliver
-              seamless user experiences.
-            </Description>
+            <Description></Description>
             <ButtonGroup>
               <ResumeButton href="/resume.pdf" download>
                 Download Resume

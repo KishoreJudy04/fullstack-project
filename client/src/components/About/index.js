@@ -13,31 +13,78 @@ import {
   SkillCard,
   SkillIcon,
   SkillName,
-  SkillDescription,
   Title,
   AccentText,
 } from "./styledComponents";
 const About = () => {
   const skills = [
     {
-      icon: "⚛️",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      name: "HTML5",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      name: "CSS3",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      name: "JavaScript",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
       name: "React.js",
-      description: "Building interactive UIs",
     },
     {
-      icon: "🚀",
-      name: "Node.js",
-      description: "Server-side development",
-    },
-    {
-      icon: "🎨",
-      name: "UI/UX Design",
-      description: "Creating beautiful interfaces",
-    },
-    {
-      icon: "📱",
+      icon: "https://img.icons8.com/?size=100&id=ucDmdolNWVSa&format=png&color=000000", // Example responsive icon
       name: "Responsive Design",
-      description: "Mobile-first approach",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg",
+      name: "Bootstrap",
+    },
+    {
+      icon: "https://img.icons8.com/?size=100&id=c1mtVgVrrFg8&format=png&color=000000", // Example UI/UX icon
+      name: "UI/UX Design",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+      name: "MongoDB",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+      name: "Express.js",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      name: "Node.js",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+      name: "SQL",
+    },
+    {
+      icon: "https://img.icons8.com/?size=100&id=70667&format=png&color=000000",
+      name: "Power BI",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      name: "Python",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+      name: "C++",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      name: "Git",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+      name: "GitHub",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+      name: "Figma",
     },
   ];
 
@@ -51,9 +98,9 @@ const About = () => {
           <ImageSection>
             <Title>About Me</Title>
             <Bio>
-              I'm a passionate Full Stack Developer with over 3 years of
-              experience creating digital experiences that make people's lives
-              easier.
+              I'm a Full Stack Developer who loves building clean, responsive
+              web applications that solve real-world problems and deliver
+              seamless user experiences.
             </Bio>
             <AboutImage
               src="https://portfolioprosite.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabout-image.464b6621.png&w=1920&q=100"
@@ -65,9 +112,10 @@ const About = () => {
             <SkillsGrid>
               {skills.map((skill, index) => (
                 <SkillCard key={index}>
-                  <SkillIcon>{skill.icon}</SkillIcon>
+                  <SkillIcon>
+                    <img src={skill.icon} alt={skill.name} />
+                  </SkillIcon>
                   <SkillName>{skill.name}</SkillName>
-                  <SkillDescription>{skill.description}</SkillDescription>
                 </SkillCard>
               ))}
             </SkillsGrid>

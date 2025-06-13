@@ -98,22 +98,28 @@ const Bio = styled.p`
 `;
 
 const SkillsTitle = styled.h3`
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
   color: ${(props) => props.theme.text};
+  margin-bottom: 1rem;
 `;
 
 const SkillsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1rem;
+  padding: 1rem;
 `;
 
 const SkillCard = styled.div`
   background: white;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 15px;
+  height: 160px; /* Add this */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   box-shadow: ${(props) => props.theme.shadow};
   transition: all 0.3s ease;
   border-left: 4px solid ${(props) => props.theme.primary};
@@ -126,20 +132,22 @@ const SkillCard = styled.div`
 `;
 
 const SkillIcon = styled.div`
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  width: 50px;
+  height: 50px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 `;
 
 const SkillName = styled.h4`
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   color: ${(props) => props.theme.text};
-  margin-bottom: 0.5rem;
-`;
-
-const SkillDescription = styled.p`
-  font-size: 0.9rem;
-  color: ${(props) => props.theme.textLight};
+  margin-bottom: 0.25rem;
+  margin-top: 0;
 `;
 
 const AccentText = styled.span`
@@ -161,7 +169,6 @@ export {
   SkillCard,
   SkillIcon,
   SkillName,
-  SkillDescription,
   Title,
   AccentText,
 };

@@ -14,6 +14,7 @@ export const HeroSection = styled.section`
   width: 100%;
   min-height: 90vh;
   display: flex;
+  justify-content: center;
   align-items: center;
   background: linear-gradient(
     135deg,
@@ -131,7 +132,7 @@ export const ImageWrapper = styled.div`
   margin-left: 2rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
   flex: 1;
 
   @media (max-width: 768px) {
