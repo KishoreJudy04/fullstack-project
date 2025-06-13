@@ -41,7 +41,7 @@ const Navbar = () => {
   return (
     <NavContainer>
       <NavContent>
-        <Logo>KISHORE</Logo>
+        <Logo to="home">KISHORE</Logo>
         <NavLinks isOpen={isOpen}>
           <NavLink
             to="home"

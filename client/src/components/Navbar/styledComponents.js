@@ -65,7 +65,7 @@ const NavLink = styled(Link)`
 
   &:hover,
   &.active {
-    color: ${(props) => props.theme.primary};
+    color: #760fdd;
   }
 
   &::after {
