@@ -9,8 +9,7 @@ import {
   SubHeading,
   Description,
   ButtonGroup,
-  PrimaryButton,
-  SecondaryButton,
+  ResumeButton,
   SocialLinks,
   SocialIcon,
   ImageWrapper,
@@ -18,17 +17,7 @@ import {
 } from "./styledComponents";
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 
-const Hero = () => {
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 60,
-        behavior: "smooth",
-      });
-    }
-  };
-
+const Home = () => {
   return (
     <HeroSection id="home">
       <Overlay />
@@ -40,17 +29,14 @@ const Hero = () => {
             </MainHeading>
             <SubHeading>Full Stack Developer</SubHeading>
             <Description>
-              Passionate about creating beautiful, functional web applications
-              that solve real-world problems and deliver exceptional user
-              experiences.
+              I'm a Full Stack Developer who loves building clean, responsive
+              web applications that solve real-world problems and deliver
+              seamless user experiences.
             </Description>
             <ButtonGroup>
-              <PrimaryButton onClick={() => scrollToSection("contact")}>
-                Get In Touch
-              </PrimaryButton>
-              <SecondaryButton onClick={() => scrollToSection("projects")}>
-                View Work
-              </SecondaryButton>
+              <ResumeButton href="/resume.pdf" download>
+                Download Resume
+              </ResumeButton>
             </ButtonGroup>
             <SocialLinks>
               <SocialIcon
@@ -97,4 +83,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Home;

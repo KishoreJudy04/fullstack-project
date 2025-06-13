@@ -1,79 +1,91 @@
-import { useEffect, useState } from "react";
+import React from "react";
 import {
   ProjectsSection,
-  ProjectsHeading,
+  Container,
+  SectionTitle,
   ProjectsGrid,
   ProjectCard,
+  ProjectImage,
+  ProjectContent,
   ProjectTitle,
   ProjectDescription,
   TechStack,
-  TechBadge,
-  ProjectLinks,
-  ProjectLink,
+  TechTag,
+  ProjectButtons,
+  ProjectButton,
 } from "./styledComponents";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = () => {
-  const [projects, setProjects] = useState([]);
-
-  // Mock data instead of axios
-  useEffect(() => {
-    const mockProjects = [
-      {
-        name: "Portfolio Website",
-        description:
-          "A personal portfolio built with React and styled-components.",
-        tech: ["React", "JavaScript", "Styled-Components"],
-        github: "https://github.com/your-username/portfolio",
-        demo: "https://your-portfolio-demo.vercel.app/",
-      },
-      {
-        name: "Todo App",
-        description: "A simple todo list application with local storage.",
-        tech: ["React", "CSS"],
-        github: "https://github.com/your-username/todo-app",
-        demo: "https://todo-app-demo.vercel.app/",
-      },
-      {
-        name: "Weather App",
-        description: "Weather forecast app using OpenWeatherMap API.",
-        tech: ["React", "API", "Bootstrap"],
-        github: "https://github.com/your-username/weather-app",
-        demo: "https://weather-app-demo.vercel.app/",
-      },
-    ];
-
-    setProjects(mockProjects);
-  }, []);
+  const projects = [
+    {
+      title: "E-Commerce Platform",
+      description:
+        "A full-stack e-commerce solution with React frontend, Node.js backend, and MongoDB database. Features include user authentication, shopping cart, payment integration, and admin panel.",
+      image:
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+      techStack: ["React", "Node.js", "MongoDB", "Stripe"],
+      liveUrl: "https://portfolioprosite.vercel.app/",
+      githubUrl: "#",
+    },
+    {
+      title: "Task Management App",
+      description:
+        "A collaborative task management application built with React and Firebase. Features real-time updates, team collaboration, file attachments, and progress tracking.",
+      image:
+        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+      techStack: ["React", "Firebase", "Material-UI", "Redux"],
+      liveUrl: "#",
+      githubUrl: "#",
+    },
+    {
+      title: "Weather Dashboard",
+      description:
+        "A responsive weather application that provides current weather conditions and forecasts. Built with React and integrated with multiple weather APIs for accurate data.",
+      image:
+        "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=300&fit=crop",
+      techStack: ["React", "API Integration", "Chart.js", "CSS3"],
+      liveUrl: "#",
+      githubUrl: "#",
+    },
+    {
+      title: "Social Media Dashboard",
+      description:
+        "A comprehensive social media analytics dashboard with data visualization, user engagement metrics, and automated reporting features.",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+      techStack: ["Vue.js", "D3.js", "Express", "PostgreSQL"],
+      liveUrl: "#",
+      githubUrl: "#",
+    },
+  ];
 
   return (
     <ProjectsSection id="projects">
-      <ProjectsHeading>Projects</ProjectsHeading>
-      <ProjectsGrid>
-        {projects.map((proj, idx) => (
-          <ProjectCard key={idx}>
-            <ProjectTitle>{proj.name}</ProjectTitle>
-            <ProjectDescription>{proj.description}</ProjectDescription>
-            <TechStack>
-              {proj.tech.map((tech) => (
-                <TechBadge key={tech}>{tech}</TechBadge>
-              ))}
-            </TechStack>
-            <ProjectLinks>
-              <ProjectLink
-                href={proj.github}
-                target="_blank"
-                aria-label="GitHub"
-              >
-                <FaGithub /> GitHub
-              </ProjectLink>
-              <ProjectLink href={proj.demo} target="_blank" aria-label="Demo">
-                <FaExternalLinkAlt /> Demo
-              </ProjectLink>
-            </ProjectLinks>
-          </ProjectCard>
-        ))}
-      </ProjectsGrid>
+      <Container>
+        <SectionTitle>My Projects</SectionTitle>
+        <ProjectsGrid>
+          {projects.map((project, index) => (
+            <ProjectCard key={index}>
+              <ProjectImage src={project.image} alt={project.title} />
+              <ProjectContent>
+                <ProjectTitle>{project.title}</ProjectTitle>
+                <ProjectDescription>{project.description}</ProjectDescription>
+                <TechStack>
+                  {project.techStack.map((tech, techIndex) => (
+                    <TechTag key={techIndex}>{tech}</TechTag>
+                  ))}
+                </TechStack>
+                <ProjectButtons>
+                  <ProjectButton href={project.liveUrl} primary>
+                    Live Preview
+                  </ProjectButton>
+                  <ProjectButton href={project.githubUrl}>GitHub</ProjectButton>
+                </ProjectButtons>
+              </ProjectContent>
+            </ProjectCard>
+          ))}
+        </ProjectsGrid>
+      </Container>
     </ProjectsSection>
   );
 };
