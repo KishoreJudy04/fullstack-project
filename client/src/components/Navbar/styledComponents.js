@@ -7,7 +7,6 @@ const NavContainer = styled.nav`
   left: 0;
   right: 0;
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(59, 130, 246, 0.1);
   z-index: 1000;
   padding: 1rem 0;
@@ -31,7 +30,6 @@ const NavContent = styled.div`
 const Logo = styled.div`
   font-size: 1.5rem;
   font-weight: 700;
-  color: ${(props) => props.theme.primary};
   cursor: pointer;
 `;
 
@@ -50,13 +48,12 @@ const NavLinks = styled.div`
     background: white;
     flex-direction: column;
     padding: 2rem;
-    box-shadow: ${(props) => props.theme.shadowLg};
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 0;
   }
 `;
 
 const NavLink = styled(Link)`
-  color: ${(props) => props.theme.text};
   text-decoration: none;
   font-weight: 500;
   cursor: pointer;
@@ -75,7 +72,7 @@ const NavLink = styled(Link)`
     left: 0;
     width: 0;
     height: 2px;
-    background: ${(props) => props.theme.primary};
+    background: #760fdd;
     transition: width 0.3s ease;
   }
 
@@ -114,7 +111,6 @@ const MobileToggle = styled.button`
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: ${(props) => props.theme.primary};
 
   @media (max-width: 768px) {
     display: block;

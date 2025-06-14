@@ -47,6 +47,10 @@ const About = () => {
       name: "UI/UX Design",
     },
     {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+      name: "Figma",
+    },
+    {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
       name: "MongoDB",
     },
@@ -59,8 +63,8 @@ const About = () => {
       name: "Node.js",
     },
     {
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-      name: "SQL",
+      icon: "https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg",
+      name: "MySQL",
     },
     {
       icon: "https://img.icons8.com/?size=100&id=70667&format=png&color=000000",
@@ -81,10 +85,6 @@ const About = () => {
     {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
       name: "GitHub",
-    },
-    {
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
-      name: "Figma",
     },
   ];
 

@@ -10,59 +10,35 @@ import {
   ProjectTitle,
   ProjectDescription,
   TechStack,
-  TechTag,
+  StackIcon,
   ProjectButtons,
   ProjectButton,
+  AccentText,
 } from "./styledComponents";
 
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Portfolio Website",
       description:
-        "A full-stack e-commerce solution with React frontend, Node.js backend, and MongoDB database. Features include user authentication, shopping cart, payment integration, and admin panel.",
-      image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
-      techStack: ["React", "Node.js", "MongoDB", "Stripe"],
-      liveUrl: "https://portfolioprosite.vercel.app/",
-      githubUrl: "#",
-    },
-    {
-      title: "Task Management App",
-      description:
-        "A collaborative task management application built with React and Firebase. Features real-time updates, team collaboration, file attachments, and progress tracking.",
-      image:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
-      techStack: ["React", "Firebase", "Material-UI", "Redux"],
+        "A personal portfolio website showcasing my projects, skills, and experience. Built with React and styled-components.",
+      image: "https://i.ibb.co/qY1rczw1/istockphoto-682084406-612x612.jpg",
+      techStack: [
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+        "https://raw.githubusercontent.com/styled-components/brand/master/styled-components.svg",
+      ],
       liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      title: "Weather Dashboard",
-      description:
-        "A responsive weather application that provides current weather conditions and forecasts. Built with React and integrated with multiple weather APIs for accurate data.",
-      image:
-        "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=300&fit=crop",
-      techStack: ["React", "API Integration", "Chart.js", "CSS3"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      title: "Social Media Dashboard",
-      description:
-        "A comprehensive social media analytics dashboard with data visualization, user engagement metrics, and automated reporting features.",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
-      techStack: ["Vue.js", "D3.js", "Express", "PostgreSQL"],
-      liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/KishoreJudy04/portfolio-website",
     },
   ];
 
   return (
     <ProjectsSection id="projects">
       <Container>
-        <SectionTitle>My Projects</SectionTitle>
+        <SectionTitle>
+          My <AccentText>Projects</AccentText>
+        </SectionTitle>
         <ProjectsGrid>
           {projects.map((project, index) => (
             <ProjectCard key={index}>
@@ -72,7 +48,9 @@ const Projects = () => {
                 <ProjectDescription>{project.description}</ProjectDescription>
                 <TechStack>
                   {project.techStack.map((tech, techIndex) => (
-                    <TechTag key={techIndex}>{tech}</TechTag>
+                    <StackIcon key={techIndex}>
+                      <img src={tech} alt={`Tech logo ${techIndex}`} />
+                    </StackIcon>
                   ))}
                 </TechStack>
                 <ProjectButtons>

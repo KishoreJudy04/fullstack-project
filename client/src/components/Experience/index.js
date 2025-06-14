@@ -5,54 +5,65 @@ import {
   Container,
   SectionTitle,
   ChronoWrapper,
+  AccentText,
 } from "./styledComponents";
 
 const Experience = () => {
   const items = [
     {
       title: "2023 - Present",
-      cardTitle: "Senior Full Stack Developer",
-      cardSubtitle: "Tech Solutions Inc.",
+      cardTitle: "Learning Full Stack Development and DSA",
+      cardSubtitle: "NxtWave CCBP 4.0 Academy",
       cardDetailedText:
-        "Led development of multiple web applications using React.js and Node.js. Managed a team of 4 developers and improved application performance by 40%. Implemented modern CI/CD practices and mentored junior developers.",
+        "Currently learning Full Stack Development and Data Structures & Algorithms.",
+    },
+    {
+      title: "2023 - Present",
+      cardTitle: "Bachelor of Engineering in Mechanical Engineering",
+      cardSubtitle: "PSG College of Technology",
+      cardDetailedText:
+        "Currently pursuing a Bachelor's degree in Mechanical Engineering. Involved in projects related to design and automobile.",
     },
     {
       title: "2021 - 2023",
-      cardTitle: "Frontend Developer",
-      cardSubtitle: "Digital Agency Pro",
+      cardTitle: "Diploma of Mechanical Engineering",
+      cardSubtitle: "VSVN Polytechnic College",
       cardDetailedText:
-        "Developed responsive web applications for various clients using React.js, Vue.js, and modern CSS frameworks. Collaborated with designers to create pixel-perfect user interfaces and improved user engagement by 60%.",
+        "Completed the Diploma of Mechanical Engineering with a focus on design and manufacturing. Developed skills in CAD software and mechanical systems analysis.",
     },
     {
-      title: "2020 - 2021",
-      cardTitle: "Junior Web Developer",
-      cardSubtitle: "StartUp Innovations",
+      title: "2021",
+      cardTitle: "Higher Secondary Certificate",
+      cardSubtitle: "SBK Boys Higher Secondary School",
       cardDetailedText:
-        "Built and maintained company websites using HTML, CSS, JavaScript, and PHP. Learned modern frontend frameworks and contributed to the development of an e-commerce platform that generated $500K+ in revenue.",
+        "Completed the Higher Secondary Certificate with a focus on science and mathematics with 86.4%.",
     },
     {
-      title: "2018 - 2020",
-      cardTitle: "Bachelor's in Computer Science",
-      cardSubtitle: "University of Technology",
+      title: "2019",
+      cardTitle: "Secondary School Leaving Certificate",
+      cardSubtitle: "SBK Boys Higher Secondary School",
       cardDetailedText:
-        "Graduated with honors, focusing on software engineering and web development. Completed multiple projects including a social media platform, an inventory management system, and a mobile app for campus events.",
+        "Completed the Secondary School Leaving Certificate with a focus on science and mathematics with 80%.",
     },
   ];
 
   return (
     <ExperienceSection id="experience">
       <Container>
-        <SectionTitle>Experience & Education</SectionTitle>
+        <SectionTitle>
+          My <AccentText>Experience</AccentText> &{" "}
+          <AccentText>Education</AccentText>
+        </SectionTitle>
         <ChronoWrapper>
           <Chrono
             items={items}
             mode="VERTICAL"
             theme={{
-              primary: "#3B82F6",
-              secondary: "#F97316",
-              cardBgColor: "white",
-              cardForeColor: "#1F2937",
-              titleColor: "#1F2937",
+              primary: " #00bcd4",
+              secondary: "rgb(237, 241, 7)",
+              cardBgColor: " white",
+              cardForeColor: " #1F2937",
+              titleColor: " #1F2937",
             }}
             fontSizes={{
               cardSubtitle: "0.95rem",

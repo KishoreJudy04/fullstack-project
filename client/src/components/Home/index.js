@@ -1,6 +1,5 @@
 import {
   HeroSection,
-  Overlay,
   Container,
   ContentWrapper,
   TextContent,
@@ -14,16 +13,20 @@ import {
   SocialIcon,
   ImageWrapper,
   ProfileImage,
+  MobileProfileImage,
 } from "./styledComponents";
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
 
 const Home = () => {
   return (
     <HeroSection id="home">
-      <Overlay />
       <Container>
         <ContentWrapper>
           <TextContent>
+            <MobileProfileImage
+              src="https://i.ibb.co/ccxxH1Q9/20250328-173317-EDIT.jpg"
+              alt="Kishore - Full Stack Developer"
+            />
             <MainHeading>
               Hi, I'm <AccentText>KISHORE</AccentText>
             </MainHeading>
@@ -36,7 +39,7 @@ const Home = () => {
             </ButtonGroup>
             <SocialLinks>
               <SocialIcon
-                href="https://github.com/"
+                href="https://github.com/KishoreJudy04"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -44,7 +47,7 @@ const Home = () => {
                 <FaGithub size={28} />
               </SocialIcon>
               <SocialIcon
-                href="https://linkedin.com/"
+                href="https://www.linkedin.com/in/kishorebk13042004/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -52,18 +55,20 @@ const Home = () => {
                 <FaLinkedin size={28} />
               </SocialIcon>
               <SocialIcon
-                href="https://twitter.com/"
+                href="https://www.instagram.com/kishore_judy_04/?hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Twitter"
+                aria-label="Instagram"
               >
-                <FaTwitter size={28} />
+                <FaInstagram size={28} />
               </SocialIcon>
               <SocialIcon
-                href="mailto:your.email@example.com"
-                aria-label="Email"
+                href="https://www.facebook.com/profile.php?id=100040365094247&sk=about"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
               >
-                <FaEnvelope size={28} />
+                <FaFacebook size={28} />
               </SocialIcon>
             </SocialLinks>
           </TextContent>

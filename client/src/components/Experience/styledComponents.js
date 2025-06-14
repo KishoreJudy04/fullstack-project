@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const ExperienceSection = styled.section`
   padding: 5rem 0;
-  background: ${(props) => props.theme.background};
 `;
 
 const Container = styled.div`
@@ -16,52 +15,42 @@ const SectionTitle = styled.h2`
   font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
-  color: ${(props) => props.theme.text};
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(
-      135deg,
-      ${(props) => props.theme.primary},
-      ${(props) => props.theme.secondary}
-    );
-    border-radius: 2px;
-  }
 `;
 
 const ChronoWrapper = styled.div`
   .timeline-card-content {
-    background: white !important;
-    border-radius: 15px !important;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
-    border-left: 4px solid ${(props) => props.theme.primary} !important;
+    border-radius: 15px;
+    border-left: 4px solid rgba(12, 12, 12, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid #00bcd4;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      border-left-color: #ff4081;
+    }
   }
 
   .timeline-card-title {
-    color: ${(props) => props.theme.text} !important;
-    font-weight: 600 !important;
+    font-weight: 600;
+    font-size: 1.2rem;
   }
 
-  .timeline-card-content p {
-    color: ${(props) => props.theme.textLight} !important;
-    line-height: 1.6 !important;
-  }
-
-  .timeline-vertical .timeline-circle {
-    background: ${(props) => props.theme.primary} !important;
-    border: 3px solid ${(props) => props.theme.secondary} !important;
-  }
-
-  .timeline-vertical .timeline-line {
-    background: ${(props) => props.theme.primary} !important;
+  .timeline-card-content {
+    line-height: 1.6;
   }
 `;
 
-export { ExperienceSection, Container, SectionTitle, ChronoWrapper };
+const AccentText = styled.span`
+  color: #00bcd4;
+  font-weight: bold;
+`;
+
+export {
+  ExperienceSection,
+  Container,
+  SectionTitle,
+  ChronoWrapper,
+  AccentText,
+};

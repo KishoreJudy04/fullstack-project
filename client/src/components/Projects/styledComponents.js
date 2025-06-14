@@ -13,7 +13,7 @@ const fadeInUp = keyframes`
 
 const ProjectsSection = styled.section`
   padding: 5rem 0;
-  background: ${(props) => props.theme.backgroundLight};
+  background: #ffffff;
 `;
 
 const Container = styled.div`
@@ -27,24 +27,6 @@ const SectionTitle = styled.h2`
   font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
-  color: ${(props) => props.theme.text};
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(
-      135deg,
-      ${(props) => props.theme.primary},
-      ${(props) => props.theme.secondary}
-    );
-    border-radius: 2px;
-  }
 `;
 
 const ProjectsGrid = styled.div`
@@ -61,13 +43,13 @@ const ProjectCard = styled.div`
   background: white;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: ${(props) => props.theme.shadow};
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   animation: ${fadeInUp} 0.6s ease-out;
 
   &:hover {
     transform: translateY(-10px);
-    box-shadow: ${(props) => props.theme.shadowLg};
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   }
 `;
 
@@ -76,10 +58,6 @@ const ProjectImage = styled.img`
   height: 200px;
   object-fit: cover;
   transition: transform 0.3s ease;
-
-  ${ProjectCard}:hover & {
-    transform: scale(1.05);
-  }
 `;
 
 const ProjectContent = styled.div`
@@ -89,12 +67,12 @@ const ProjectContent = styled.div`
 const ProjectTitle = styled.h3`
   font-size: 1.3rem;
   font-weight: 600;
-  color: ${(props) => props.theme.text};
+  color: #000000;
   margin-bottom: 0.5rem;
 `;
 
 const ProjectDescription = styled.p`
-  color: ${(props) => props.theme.textLight};
+  color: #666666;
   margin-bottom: 1rem;
   line-height: 1.6;
 `;
@@ -104,19 +82,18 @@ const TechStack = styled.div`
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
+  color: rgb(9, 240, 240);
 `;
 
-const TechTag = styled.span`
-  background: linear-gradient(
-    135deg,
-    ${(props) => props.theme.primary},
-    ${(props) => props.theme.secondary}
-  );
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 500;
+const StackIcon = styled.div`
+  width: 40px;
+  height: 40px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 `;
 
 const ProjectButtons = styled.div`
@@ -137,6 +114,10 @@ const ProjectButton = styled.a`
   color: #ffffff;
   border: none;
 `;
+const AccentText = styled.span`
+  color: #00bcd4;
+  font-weight: bold;
+`;
 
 export {
   ProjectsSection,
@@ -149,7 +130,8 @@ export {
   ProjectTitle,
   ProjectDescription,
   TechStack,
-  TechTag,
+  StackIcon,
   ProjectButtons,
   ProjectButton,
+  AccentText,
 };

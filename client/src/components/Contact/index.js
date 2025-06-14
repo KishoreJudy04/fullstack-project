@@ -16,6 +16,7 @@ import {
   TextArea,
   SubmitButton,
   Footer,
+  AccentText,
 } from "./styledComponents";
 
 const Contact = () => {
@@ -49,14 +50,16 @@ const Contact = () => {
   return (
     <ContactSection id="contact">
       <Container>
-        <SectionTitle>Get In Touch</SectionTitle>
+        <SectionTitle>
+          Contact <AccentText>Me</AccentText>
+        </SectionTitle>
         <ContactContent>
           <ContactInfo>
             <InfoTitle>Let's work together!</InfoTitle>
             <InfoText>
-              I'm always interested in new opportunities and exciting projects.
-              Whether you have a project in mind or just want to say hello, feel
-              free to reach out. I'd love to hear from you!
+              I'm always open to discussing new projects, creative ideas, or
+              opportunities to be part of your vision. Whether you have a
+              question or just want to say hi, feel free to reach out!
             </InfoText>
             <SocialLinks>
               <SocialLink
@@ -64,22 +67,44 @@ const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                📱
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                  alt="Logo"
+                  width="30"
+                />
               </SocialLink>
               <SocialLink
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                💼
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                  alt="Logo"
+                  width="30"
+                />
               </SocialLink>
-              <SocialLink href="mailto:john@example.com">✉️</SocialLink>
+              <SocialLink
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+                  alt="Logo"
+                  width="30"
+                />
+              </SocialLink>
               <SocialLink
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                🐦
+                <img
+                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg"
+                  alt="Logo"
+                  width="30"
+                />
               </SocialLink>
             </SocialLinks>
           </ContactInfo>
@@ -90,6 +115,7 @@ const Contact = () => {
                 type="text"
                 id="name"
                 name="name"
+                placeholder="Your Name"
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -101,6 +127,7 @@ const Contact = () => {
                 type="email"
                 id="email"
                 name="email"
+                placeholder="Your Email"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -111,6 +138,7 @@ const Contact = () => {
               <TextArea
                 id="message"
                 name="message"
+                placeholder="Your Message"
                 value={formData.message}
                 onChange={handleChange}
                 required
@@ -122,7 +150,7 @@ const Contact = () => {
           </ContactForm>
         </ContactContent>
         <Footer>
-          <p>© 2025 John Doe. All rights reserved.</p>
+          <p>© 2025 Kishore. All rights reserved.</p>
         </Footer>
       </Container>
     </ContactSection>

@@ -13,7 +13,6 @@ const fadeIn = keyframes`
 
 const ContactSection = styled.section`
   padding: 5rem 0 2rem;
-  background: ${(props) => props.theme.background};
 `;
 
 const Container = styled.div`
@@ -27,7 +26,6 @@ const SectionTitle = styled.h2`
   font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
-  color: ${(props) => props.theme.text};
   position: relative;
 
   &::after {
@@ -38,11 +36,6 @@ const SectionTitle = styled.h2`
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: linear-gradient(
-      135deg,
-      ${(props) => props.theme.primary},
-      ${(props) => props.theme.secondary}
-    );
     border-radius: 2px;
   }
 `;
@@ -70,14 +63,13 @@ const ContactForm = styled.form`
 const InfoTitle = styled.h3`
   font-size: 1.5rem;
   font-weight: 600;
-  color: ${(props) => props.theme.text};
   margin-bottom: 1rem;
 `;
 
 const InfoText = styled.p`
-  color: ${(props) => props.theme.textLight};
   line-height: 1.6;
   margin-bottom: 2rem;
+  color: #555;
 `;
 
 const SocialLinks = styled.div`
@@ -92,12 +84,6 @@ const SocialLink = styled.a`
   justify-content: center;
   width: 50px;
   height: 50px;
-  background: linear-gradient(
-    135deg,
-    ${(props) => props.theme.primary},
-    ${(props) => props.theme.secondary}
-  );
-  color: white;
   border-radius: 50%;
   text-decoration: none;
   font-size: 1.2rem;
@@ -105,7 +91,7 @@ const SocialLink = styled.a`
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: ${(props) => props.theme.shadowLg};
+    box-shadow: rgb(237, 23, 19) 0 2px 10px;
   }
 `;
 
@@ -116,7 +102,7 @@ const FormGroup = styled.div`
 const Label = styled.label`
   display: block;
   margin-bottom: 0.5rem;
-  color: ${(props) => props.theme.text};
+  color: #333;
   font-weight: 500;
 `;
 
@@ -131,7 +117,6 @@ const Input = styled.input`
 
   &:focus {
     outline: none;
-    border-color: ${(props) => props.theme.primary};
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
   }
 `;
@@ -149,17 +134,13 @@ const TextArea = styled.textarea`
 
   &:focus {
     outline: none;
-    border-color: ${(props) => props.theme.primary};
+    border-color: #e5e7eb;
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
   }
 `;
 
 const SubmitButton = styled.button`
-  background: linear-gradient(
-    135deg,
-    ${(props) => props.theme.primary},
-    ${(props) => props.theme.secondary}
-  );
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   padding: 1rem 2rem;
   border: none;
@@ -172,13 +153,7 @@ const SubmitButton = styled.button`
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: ${(props) => props.theme.shadowLg};
-  }
-
-  &:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
+    box-shadow: rgb(226, 8, 246) 0 2px 10px;
   }
 `;
 
@@ -186,8 +161,14 @@ const Footer = styled.footer`
   text-align: center;
   padding-top: 2rem;
   border-top: 1px solid #e5e7eb;
-  color: ${(props) => props.theme.textLight};
   margin-top: 3rem;
+  background-color: #ffffff;
+  font-weight: 600;
+`;
+
+const AccentText = styled.span`
+  color: #00bcd4;
+  font-weight: bold;
 `;
 
 export {
@@ -207,4 +188,5 @@ export {
   TextArea,
   SubmitButton,
   Footer,
+  AccentText,
 };

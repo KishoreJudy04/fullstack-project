@@ -21,23 +21,16 @@ export const HeroSection = styled.section`
     rgb(70, 92, 233) 0%,
     rgb(118, 15, 221) 100%
   );
-  background-position: center;
-  color: #fff;
 
   @media (max-width: 768px) {
-    background: url("https://i.ibb.co/S4RTrB0y/IMG-9602-removebg-preview.png")
-      no-repeat center center;
-    background-size: cover;
     min-height: 100vh;
     padding: 60px 1.5rem 2rem 1.5rem;
+    background: linear-gradient(
+      135deg,
+      rgb(70, 92, 233) 0%,
+      rgb(118, 15, 221) 100%
+    );
   }
-`;
-
-export const Overlay = styled.div`
-  position: absolute;
-  inset: 0;
-  background: rgba(63, 61, 86, 0.7);
-  z-index: 1;
 `;
 
 export const Container = styled.div`
@@ -74,6 +67,27 @@ export const TextContent = styled.div`
     align-items: center;
     justify-content: center;
     text-align: center;
+  }
+`;
+
+export const MobileProfileImage = styled.img`
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px #7fcbd5;
+    }
   }
 `;
 
@@ -115,11 +129,13 @@ export const SocialIcon = styled.a`
   font-size: 2rem;
   transition: color 0.2s;
   &:hover {
+    transform: translateY(-3px);
     color: #00bcd4;
   }
   &:active {
-    color: rgb(250, 1, 84);
+    color: #a3063b;
   }
+
   @media (max-width: 768px) {
     width: 100%;
     margin-top: 1rem;
