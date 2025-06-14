@@ -95,6 +95,7 @@ export const MainHeading = styled.h1`
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  color: #ffffff;
 `;
 
 export const AccentText = styled.span`
@@ -105,6 +106,7 @@ export const SubHeading = styled.h2`
   font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 1.5rem;
+  color: #ffffff;
 `;
 
 export const Description = styled.p`
