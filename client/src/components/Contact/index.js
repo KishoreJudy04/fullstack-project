@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import {
   ContactSection,
   Container,
@@ -20,6 +21,7 @@ import {
 } from "./styledComponents";
 
 const Contact = () => {
+  const form = useRef();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -38,13 +40,25 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
-      setIsSubmitting(false);
-      setFormData({ name: "", email: "", message: "" });
-      alert("Thank you for your message! I'll get back to you soon.");
-    }, 1000);
+    emailjs
+      .sendForm(
+        "service_o9rkyfq",
+        "template_bqye82j",
+        form.current,
+        "lz8Gw0ROQJUNWmf3h"
+      )
+      .then(
+        (result) => {
+          alert("Thank You! Message has been sent successfully!");
+          form.current.reset();
+        },
+        (error) => {
+          alert("Failed to send message. Please try again later.");
+        }
+      )
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   return (
@@ -120,7 +134,7 @@ const Contact = () => {
               </SocialLink>
             </SocialLinks>
           </ContactInfo>
-          <ContactForm onSubmit={handleSubmit}>
+          <ContactForm ref={form} onSubmit={handleSubmit}>
             <FormGroup>
               <Label htmlFor="name">Name</Label>
               <Input

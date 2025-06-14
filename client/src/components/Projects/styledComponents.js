@@ -111,7 +111,7 @@ const ProjectButton = styled.button`
 
   padding: 0.6rem 1.2rem;
   border-radius: 50px;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
   text-decoration: none;
   font-size: 0.95rem;
