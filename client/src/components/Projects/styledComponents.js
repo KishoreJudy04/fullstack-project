@@ -99,21 +99,46 @@ const StackIcon = styled.div`
 const ProjectButtons = styled.div`
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 `;
 
-const ProjectButton = styled.a`
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  cursor: pointer;
+const ProjectButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: "Arial", sans-serif;
+
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 500;
   text-align: center;
+  text-decoration: none;
+  font-size: 0.95rem;
+
+  background-color: #ffffff;
+  color: #333333;
+  border: 1.5px solid #cccccc;
+
+  transition: all 0.3s ease-in-out;
   flex: 1;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #ffffff;
-  border: none;
+
+  &:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  img {
+    width: 18px;
+    height: 18px;
+  }
 `;
+
 const AccentText = styled.span`
   color: #00bcd4;
   font-weight: bold;

@@ -10,7 +10,7 @@ import {
   ButtonGroup,
   ResumeButton,
   SocialLinks,
-  SocialIcon,
+  SocialIconButton,
   ImageWrapper,
   ProfileImage,
   MobileProfileImage,
@@ -38,38 +38,51 @@ const Home = () => {
               </ResumeButton>
             </ButtonGroup>
             <SocialLinks>
-              <SocialIcon
-                href="https://github.com/KishoreJudy04"
-                target="_blank"
-                rel="noopener noreferrer"
+              <SocialIconButton
+                type="button"
+                onClick={() =>
+                  window.open("https://github.com/KishoreJudy04", "_blank")
+                }
                 aria-label="GitHub"
               >
                 <FaGithub size={28} />
-              </SocialIcon>
-              <SocialIcon
-                href="https://www.linkedin.com/in/kishorebk13042004/"
-                target="_blank"
-                rel="noopener noreferrer"
+              </SocialIconButton>
+              <SocialIconButton
+                type="button"
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/kishorebk13042004/",
+                    "_blank"
+                  )
+                }
                 aria-label="LinkedIn"
               >
                 <FaLinkedin size={28} />
-              </SocialIcon>
-              <SocialIcon
-                href="https://www.instagram.com/kishore_judy_04/?hl=en"
-                target="_blank"
-                rel="noopener noreferrer"
+              </SocialIconButton>
+              <SocialIconButton
+                type="button"
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/kishore_judy_04/?hl=en",
+                    "_blank"
+                  )
+                }
                 aria-label="Instagram"
               >
                 <FaInstagram size={28} />
-              </SocialIcon>
-              <SocialIcon
-                href="https://www.facebook.com/profile.php?id=100040365094247&sk=about"
-                target="_blank"
-                rel="noopener noreferrer"
+              </SocialIconButton>
+              <SocialIconButton
+                type="button"
+                onClick={() =>
+                  window.open(
+                    "https://www.facebook.com/profile.php?id=100040365094247&sk=about",
+                    "_blank"
+                  )
+                }
                 aria-label="Facebook"
               >
                 <FaFacebook size={28} />
-              </SocialIcon>
+              </SocialIconButton>
             </SocialLinks>
           </TextContent>
           <ImageWrapper>

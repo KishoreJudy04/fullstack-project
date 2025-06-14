@@ -126,14 +126,19 @@ export const SocialLinks = styled.div`
   gap: 1.5rem;
 `;
 
-export const SocialIcon = styled.a`
+export const SocialIconButton = styled.button`
+  background: none;
+  border: none;
   color: #fff;
   font-size: 2rem;
+  cursor: pointer;
   transition: color 0.2s;
+
   &:hover {
     transform: translateY(-3px);
     color: #00bcd4;
   }
+
   &:active {
     color: #a3063b;
   }
@@ -143,6 +148,7 @@ export const SocialIcon = styled.a`
     margin-top: 1rem;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 `;
 

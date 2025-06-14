@@ -63,9 +63,11 @@ const Contact = () => {
             </InfoText>
             <SocialLinks>
               <SocialLink
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                type="button"
+                onClick={() =>
+                  window.open("https://github.com/KishoreJudy04", "_blank")
+                }
+                aria-label="GitHub"
               >
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
@@ -74,9 +76,9 @@ const Contact = () => {
                 />
               </SocialLink>
               <SocialLink
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                type="button"
+                onClick={() => window.open("https://linkedin.com", "_blank")}
+                aria-label="LinkedIn"
               >
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
@@ -85,23 +87,33 @@ const Contact = () => {
                 />
               </SocialLink>
               <SocialLink
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                type="button"
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/kishore_judy_04/",
+                    "_blank"
+                  )
+                }
+                aria-label="Instagram"
               >
                 <img
-                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+                  src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
                   alt="Logo"
                   width="30"
                 />
               </SocialLink>
               <SocialLink
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                type="button"
+                onClick={() =>
+                  window.open(
+                    "https://www.facebook.com/profile.php?id=100040365094247&sk=about",
+                    "_blank"
+                  )
+                }
+                aria-label="Facebook"
               >
                 <img
-                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg"
+                  src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
                   alt="Logo"
                   width="30"
                 />

@@ -1,4 +1,5 @@
 import React from "react";
+import { BsBoxArrowUpRight } from "react-icons/bs";
 import {
   ProjectsSection,
   Container,
@@ -28,8 +29,6 @@ const Projects = () => {
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
         "https://raw.githubusercontent.com/styled-components/brand/master/styled-components.svg",
       ],
-      liveUrl: "#",
-      githubUrl: "https://github.com/KishoreJudy04/portfolio-website",
     },
   ];
 
@@ -54,10 +53,35 @@ const Projects = () => {
                   ))}
                 </TechStack>
                 <ProjectButtons>
-                  <ProjectButton href={project.liveUrl} primary>
+                  <ProjectButton
+                    type="button"
+                    onClick={() =>
+                      window.open(
+                        "https://github.com/KishoreJudy04/fullstack-project",
+                        "_blank"
+                      )
+                    }
+                    aria-label="GitHub"
+                  >
                     Live Preview
+                    <BsBoxArrowUpRight size={14} />
                   </ProjectButton>
-                  <ProjectButton href={project.githubUrl}>GitHub</ProjectButton>
+                  <ProjectButton
+                    type="button"
+                    onClick={() =>
+                      window.open(
+                        "https://github.com/KishoreJudy04/fullstack-project",
+                        "_blank"
+                      )
+                    }
+                    aria-label="GitHub"
+                  >
+                    GitHub
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                      alt="GitHub"
+                    />
+                  </ProjectButton>
                 </ProjectButtons>
               </ProjectContent>
             </ProjectCard>
