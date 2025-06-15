@@ -96,7 +96,7 @@ const Navbar = () => {
           duration={500}
           onClick={() => setIsOpen(false)}
         >
-          Contact
+          Contact Me
         </ContactButton>
         <MobileToggle onClick={() => setIsOpen(!isOpen)}>☰</MobileToggle>
       </NavContent>

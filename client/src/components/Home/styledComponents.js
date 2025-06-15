@@ -129,7 +129,7 @@ export const SocialLinks = styled.div`
 export const SocialIconButton = styled.button`
   background: none;
   border: none;
-  color: #fff;
+  color: #ffffff;
   font-size: 2rem;
   cursor: pointer;
   transition: color 0.2s;
@@ -180,7 +180,7 @@ export const ProfileImage = styled.img`
 
 export const ResumeButton = styled.a`
   display: inline-block;
-  color: white;
+  color: #ffffff;
   padding: 1rem 2rem;
   border-radius: 50px;
   text-decoration: none;

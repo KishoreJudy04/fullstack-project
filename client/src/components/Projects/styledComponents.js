@@ -40,7 +40,7 @@ const ProjectsGrid = styled.div`
 `;
 
 const ProjectCard = styled.div`
-  background: white;
+  background: #ffffff;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -115,6 +115,8 @@ const ProjectButton = styled.button`
   text-align: center;
   text-decoration: none;
   font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   background-color: #ffffff;
   color: #333333;

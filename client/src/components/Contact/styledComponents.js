@@ -88,6 +88,7 @@ const SocialLink = styled.a`
   text-decoration: none;
   font-size: 1.2rem;
   transition: all 0.3s ease;
+  cursor: pointer;
 
   &:hover {
     transform: translateY(-3px);
@@ -141,7 +142,7 @@ const TextArea = styled.textarea`
 
 const SubmitButton = styled.button`
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  color: #ffffff;
   padding: 1rem 2rem;
   border: none;
   border-radius: 8px;

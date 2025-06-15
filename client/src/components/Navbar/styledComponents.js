@@ -45,7 +45,7 @@ const NavLinks = styled.div`
     top: 100%;
     left: 0;
     right: 0;
-    background: white;
+    background: #ffffff;
     flex-direction: column;
     padding: 2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

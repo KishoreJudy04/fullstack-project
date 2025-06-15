@@ -13,7 +13,7 @@ export const fadeIn = keyframes`
 
 const AboutSection = styled.section`
   padding: 5rem 0;
-  background: white;
+  background: #ffffff;
 `;
 
 const Container = styled.div`
@@ -94,7 +94,7 @@ const SkillsGrid = styled.div`
 `;
 
 const SkillCard = styled.div`
-  background: white;
+  background: #ffffff;
   padding: 1rem;
   border-radius: 15px;
   height: 130px;

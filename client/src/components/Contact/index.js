@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import {
   ContactSection,
@@ -21,44 +21,51 @@ import {
 } from "./styledComponents";
 
 const Contact = () => {
-  const form = useRef();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (event) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [event.target.name]: event.target.value,
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  const templateParams = {
+    from_name: formData.name,
+    reply_to: formData.email,
+    message: formData.message,
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Form submitted");
 
     emailjs
-      .sendForm(
-        "service_o9rkyfq",
-        "template_bqye82j",
-        form.current,
+      .send(
+        "service_midx4nq",
+        "template_nthpzii",
+        templateParams,
         "lz8Gw0ROQJUNWmf3h"
       )
       .then(
-        (result) => {
+        (response) => {
+          console.log("Success:", response.text);
           alert("Thank You! Message has been sent successfully!");
-          form.current.reset();
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+          });
         },
         (error) => {
+          console.log("Error:", error.text);
           alert("Failed to send message. Please try again later.");
         }
-      )
-      .finally(() => {
-        setIsSubmitting(false);
-      });
+      );
   };
 
   return (
@@ -134,7 +141,11 @@ const Contact = () => {
               </SocialLink>
             </SocialLinks>
           </ContactInfo>
-          <ContactForm ref={form} onSubmit={handleSubmit}>
+          <ContactForm
+            id="contactForm"
+            name="contactForm"
+            onSubmit={handleSubmit}
+          >
             <FormGroup>
               <Label htmlFor="name">Name</Label>
               <Input
@@ -144,7 +155,9 @@ const Contact = () => {
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={handleChange}
+                autoComplete="name"
                 required
+                autoFocus
               />
             </FormGroup>
             <FormGroup>
@@ -156,7 +169,9 @@ const Contact = () => {
                 placeholder="Your Email"
                 value={formData.email}
                 onChange={handleChange}
+                autoComplete="email"
                 required
+                autoFocus
               />
             </FormGroup>
             <FormGroup>
@@ -167,12 +182,12 @@ const Contact = () => {
                 placeholder="Your Message"
                 value={formData.message}
                 onChange={handleChange}
+                autoComplete="off"
                 required
+                rows="5"
               />
             </FormGroup>
-            <SubmitButton type="submit" disabled={isSubmitting}>
-              {isSubmitting ? "Sending..." : "Send Message"}
-            </SubmitButton>
+            <SubmitButton type="submit">Send Message</SubmitButton>
           </ContactForm>
         </ContactContent>
         <Footer>
